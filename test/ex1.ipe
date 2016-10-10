@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE ipe SYSTEM "ipe.dtd">
+<ipe version="70206" creator="Ipe 7.2.6">
+<info created="D:20161005000212" modified="D:20161005000729"/>
+<ipestyle name="basic">
+</ipestyle>
+<page>
+<layer name="alpha"/>
+<view layers="alpha" active="alpha"/>
+<path layer="alpha" stroke="0">
+128 64 m
+320 64 l
+448 128 l
+448 320 l
+384 448 l
+256 320 l
+h
+</path>
+<path stroke="0">
+40.96 122.88 m
+266.24 20.48 l
+368 192 l
+144 320 l
+h
+</path>
+</page>
+</ipe>
