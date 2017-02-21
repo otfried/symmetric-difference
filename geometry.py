@@ -2,7 +2,7 @@
 # Some geometric primitives
 #
 
-from math import sqrt, atan2
+from math import sqrt, atan2, sin, cos, pi
 from functools import reduce
 import re,sys
 
@@ -199,6 +199,11 @@ class Polygon():
     v = list(map(lambda x: lam * x + t, self.v))
     return Polygon(v)
 
+  def affine_transform(self, a11, a12, a21, a22):
+    vn = list(map(lambda v: V(a11 * v.x + a12 * v.y,
+                              a21 * v.x + a22 * v.y), self.v))
+    return Polygon(vn)
+
   def chains(self):
     i = self.v.index(self.vn)
     lo = self.v[:i+1]
@@ -229,6 +234,15 @@ def stop_ipe(out):
   out.close()
   sys.stderr.write("written\n")
 
+# --------------------------------------------------------------------
+
+def generate_kgon(k):
+  vs = []
+  for i in range(k):
+    alpha = 2 * pi * i / k
+    vs.append(V(cos(alpha), sin(alpha)))
+  return Polygon(vs)
+  
 # --------------------------------------------------------------------
 
 def _parse_vertex(s):
